@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Search Test UI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Product Search</h1>
+  <p class="subtitle">Type to get suggestions, or press Search for full results</p>
+
+  <div class="config-bar">
+    <label>Brand&rarr;Outlet Map (JSON) <input id="brand-outlet-map" value='{"b1":"o1"}'></label>
+    <label>Service Type <input id="service-type" value="DEL101"></label>
+  </div>
+
+  <div class="search-row">
+    <div class="search-wrapper">
+      <input id="search-input" class="search-input" type="text" placeholder="Search products, brands, cuisines..." autocomplete="off" spellcheck="false">
+      <div id="suggestions" class="suggestions"></div>
+    </div>
+    <button id="search-btn" class="search-btn" disabled>Search</button>
+  </div>
+
+  <div id="results" class="results"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

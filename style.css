@@ -1,0 +1,53 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f7; color: #1d1d1f; min-height: 100vh; }
+.container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.subtitle { font-size: 14px; color: #6e6e73; margin-bottom: 24px; }
+
+.config-bar { display: flex; gap: 12px; margin-bottom: 16px; }
+.config-bar label { font-size: 12px; font-weight: 500; color: #6e6e73; display: flex; flex-direction: column; gap: 4px; }
+.config-bar input { padding: 6px 10px; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 14px; width: 100px; }
+.config-bar input#brand-outlet-map { width: 220px; font-family: 'SF Mono', 'Fira Code', monospace; }
+
+.search-row { display: flex; gap: 8px; }
+.search-wrapper { flex: 1; position: relative; }
+.search-input { width: 100%; padding: 12px 16px; border: 2px solid #d2d2d7; border-radius: 12px; font-size: 16px; outline: none; transition: border-color .2s; background: #fff; }
+.search-input:focus { border-color: #0071e3; }
+
+.search-btn { padding: 12px 24px; background: #0071e3; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 500; cursor: pointer; transition: background .2s; white-space: nowrap; }
+.search-btn:hover { background: #0064cc; }
+.search-btn:disabled { background: #b0b0b5; cursor: not-allowed; }
+
+.suggestions { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #d2d2d7; border-radius: 12px; margin-top: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.12); z-index: 100; display: none; max-height: 320px; overflow-y: auto; }
+.suggestions.visible { display: block; }
+.suggestion-item { padding: 10px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; transition: background .15s; }
+.suggestion-item:last-child { border-bottom: none; }
+.suggestion-item:hover { background: #f0f7ff; }
+.suggestion-item .label { font-size: 15px; }
+.suggestion-item .ctx-badge { font-size: 11px; background: #e8e8ed; color: #6e6e73; padding: 2px 8px; border-radius: 20px; font-weight: 500; }
+.suggestion-item .ctx-badge.brand { background: #e8f5e9; color: #2e7d32; }
+.suggestion-item .ctx-badge.product { background: #e3f2fd; color: #1565c0; }
+.suggestion-item .ctx-badge.cuisine { background: #fff3e0; color: #e65100; }
+.suggestion-item .ctx-badge.category { background: #f3e5f5; color: #7b1fa2; }
+
+.results { margin-top: 24px; }
+.result-meta { font-size: 13px; color: #6e6e73; margin-bottom: 16px; }
+.brand-group { margin-bottom: 12px; }
+.brand-bar { background: #e8e8ed; border-radius: 10px; padding: 10px 16px; font-weight: 600; font-size: 15px; color: #1d1d1f; display: flex; align-items: center; gap: 8px; }
+.brand-bar .brand-id { font-weight: 700; }
+.brand-bar .brand-count { font-weight: 400; font-size: 13px; color: #6e6e73; }
+.product-list { padding-left: 20px; margin-top: 4px; display: flex; flex-direction: column; gap: 4px; }
+.product-bar { background: #fff; border: 1px solid #d2d2d7; border-radius: 8px; padding: 8px 14px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+.product-bar-main { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.product-bar .product-id { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; color: #1d1d1f; }
+.product-bar .product-label { color: #6e6e73; font-size: 13px; flex: 1; }
+.product-bar .product-score { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #1565c0; background: #e3f2fd; padding: 2px 8px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+.product-highlight { font-size: 12px; color: #48484a; line-height: 1.6; }
+.product-highlight .hl-row { display: flex; gap: 6px; }
+.product-highlight .hl-field { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #8e8e93; background: #f0f0f2; padding: 0 6px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+.product-highlight mark { background: #fff3b0; color: inherit; padding: 0 2px; border-radius: 3px; }
+
+.error-box { margin-top: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; color: #991b1b; font-size: 14px; }
+.no-results { margin-top: 24px; text-align: center; color: #6e6e73; font-size: 15px; padding: 40px 0; }
+.loading { margin-top: 24px; text-align: center; color: #6e6e73; }
+.corrected-query { font-size: 13px; color: #6e6e73; margin-bottom: 12px; font-style: italic; }
